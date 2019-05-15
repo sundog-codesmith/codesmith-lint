@@ -59,7 +59,7 @@ module.exports = function (codesmith) {
         description: 'create eslint for typescript with simple config',
         questions: [
             {
-                type: 'checkbox',
+                type: 'list',
                 name: 'template',
                 message: 'What template do you like?',
                 choices: [
@@ -72,7 +72,7 @@ module.exports = function (codesmith) {
             `you are running a eslint(ts) generator`,
             {
                 type: 'shell',
-                command: 'npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev'
+                command: 'yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin'
             },
             {
                 type: 'shell',
@@ -82,7 +82,7 @@ module.exports = function (codesmith) {
                     }
                     return false
                 },
-                command: 'npm install eslint-plugin-react --save-dev'
+                command: 'yarn add -D eslint-plugin-react'
             },
             {
                 when: (data, config) => {
