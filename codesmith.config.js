@@ -55,4 +55,59 @@ module.exports = function (codesmith) {
             },
         ]
     });
+    codesmith.setGenerator('eslint(simple-ts)', {
+        description: 'create eslint for typescript with simple config',
+        questions: [
+            {
+                type: 'checkbox',
+                name: 'template',
+                message: 'What template do you like?',
+                choices: [
+                    {name: 'plain', value: 'plain', checked: true},
+                    {name: 'React', value: 'React'},
+                ]
+            }
+        ],
+        actions: [
+            `you are running a eslint(ts) generator`,
+            {
+                type: 'shell',
+                command: 'npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev'
+            },
+            {
+                type: 'shell',
+                when: (data, config) => {
+                    if(data.template.indexOf('React') !== -1) {
+                        return true
+                    }
+                    return false
+                },
+                command: 'npm install eslint-plugin-react --save-dev'
+            },
+            {
+                when: (data, config) => {
+                    if(data.template.indexOf('plain') !== -1) {
+                        return true
+                    }
+                    return false
+                },
+                type: 'add',
+                path: '.eslintrc.js',
+                templateFile: 'generators/eslint-for-typescript/.eslint-plain.js',
+                abortOnFail: true
+            },
+            {
+                when: (data, config) => {
+                    if(data.template.indexOf('React') !== -1) {
+                        return true
+                    }
+                    return false
+                },
+                type: 'add',
+                path: '.eslintrc.js',
+                templateFile: 'generators/eslint-for-typescript/.eslint-react.js',
+                abortOnFail: true
+            },
+        ]
+    });
 };

@@ -1,20 +1,25 @@
 {
-    "name": "@codestore/lint",
-    "version": "1.0.0",
-    "description": "",
-    "main": "codesmith.config.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/sundog-codesmith/codesmith-lint.git"
-    },
-    "author": "",
-    "bugs": {
-      "url": "https://github.com/sundog-codesmith/codesmith-lint/issues"
-    },
-    "homepage": "https://github.com/sundog-codesmith/codesmith-lint#readme",
-    "license": "ISC"
+  "name": "@codestore/lint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "codesmith.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sundog-codesmith/codesmith-lint.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/sundog-codesmith/codesmith-lint/issues"
+  },
+  "homepage": "https://github.com/sundog-codesmith/codesmith-lint#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "husky": "^2.3.0"
   }
-  
+}
