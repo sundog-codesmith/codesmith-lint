@@ -1,0 +1,20 @@
+{
+    "name": "@codestore/lint",
+    "version": "1.0.0",
+    "description": "",
+    "main": "codesmith.config.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sundog-codesmith/codesmith-lint.git"
+    },
+    "author": "",
+    "bugs": {
+      "url": "https://github.com/sundog-codesmith/codesmith-lint/issues"
+    },
+    "homepage": "https://github.com/sundog-codesmith/codesmith-lint#readme",
+    "license": "ISC"
+  }
+  
